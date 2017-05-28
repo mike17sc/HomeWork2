@@ -2,6 +2,7 @@ package com.training.spring.model;
 
 import java.util.Date;
 
+
 /**
  * Created by Opleiding on 26/05/2017.
  */
