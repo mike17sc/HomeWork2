@@ -1,18 +1,26 @@
 package com.training.spring.model;
 
 import java.util.Date;
+import javax.persistence.*;
 
 
 /**
  * Created by Opleiding on 26/05/2017.
  */
+@Entity
 public class Customer {
-
+    @Id
+    @Column(name="id")
     private Long id;
+    @Column(name="firstName")
     private String firstName;
+    @Column(name="lastNam")
     private String lastName;
+    @Column(name="email")
     private String email;
+    @Column(name="mobile")
     private String mobile;
+    @Column(name="dateOfBirth")
     private Date dateOfBirth;
 
     public Customer() {
