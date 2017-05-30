@@ -1,5 +1,0 @@
-srping.datasource.driver-class-name=com.mysql.jdbc.Driver
-spring.jpa.hibernate.ddl-a
-spring.datasource.url=jdbc:mysql://localhost:3306/test
-spring.datasource.username=root
-spring.datasource.password=""

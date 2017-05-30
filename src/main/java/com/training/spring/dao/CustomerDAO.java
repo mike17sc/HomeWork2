@@ -5,9 +5,7 @@ import com.training.spring.model.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by Opleiding on 26/05/2017.
@@ -80,9 +78,10 @@ public class CustomerDAO {
      * @param id the customer id
      * @return id of deleted customer object
      */
-    public void delete(Long id) {
+    public boolean delete(Long id) {
 
         CustomerRepository.delete(id);
 
+        return true;
     }
 }

@@ -4,6 +4,8 @@ package com.training.spring.controller;
  * Created by Opleiding on 26/05/2017.
  */
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import com.training.spring.dao.CustomerDAO;
@@ -26,7 +28,8 @@ public class CustomerRestController {
     private CustomerDAO customerDAO;
 
     @GetMapping("/customers")
-    public List getCustomers() {
+    public Collection<Customer> getCustomers() {
+
         return customerDAO.list();
     }
 
@@ -52,7 +55,7 @@ public class CustomerRestController {
     @DeleteMapping("/customers/{id}")
     public ResponseEntity deleteCustomer(@PathVariable Long id) {
 
-        if (null == customerDAO.delete(id)) {
+        if (!customerDAO.delete(id)) {
             return new ResponseEntity("No Customer found for ID " + id, HttpStatus.NOT_FOUND);
         }
 
@@ -63,7 +66,7 @@ public class CustomerRestController {
     @PutMapping("/customers/{id}")
     public ResponseEntity updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
 
-        customer = customerDAO.update(id, customer);
+        customer = customerDAO.update(customer);
 
         if (null == customer) {
             return new ResponseEntity("No Customer found for ID " + id, HttpStatus.NOT_FOUND);

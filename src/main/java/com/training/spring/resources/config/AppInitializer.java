@@ -1,4 +1,4 @@
-package com.training.spring.config;
+package com.training.spring.resources.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
