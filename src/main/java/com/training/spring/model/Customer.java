@@ -10,17 +10,12 @@ import javax.persistence.*;
 @Entity
 public class Customer {
     @Id
-    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    @Column(name="firstName")
     private String firstName;
-    @Column(name="lastNam")
     private String lastName;
-    @Column(name="email")
     private String email;
-    @Column(name="mobile")
     private String mobile;
-    @Column(name="dateOfBirth")
     private Date dateOfBirth;
 
     public Customer() {
